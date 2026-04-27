@@ -62,10 +62,6 @@ const items: PortfolioItem[] = [
     title: 'Sportage',
     instagramUrl: 'https://www.instagram.com/reel/DWHV9r1kc3T/',
   },
-  {
-    category: 'Carros',
-    title: 'Peugeot',
-  },
 ]
 
 export default function Portfolio() {
