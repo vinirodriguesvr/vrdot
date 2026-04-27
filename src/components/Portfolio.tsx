@@ -17,6 +17,7 @@ const items: PortfolioItem[] = [
   {
     category: 'Eventos',
     title: 'Hype Boutique',
+    instagramUrl: 'https://www.instagram.com/reels/DUeN9kEj6iq/',
   },
   {
     category: 'Eventos',
