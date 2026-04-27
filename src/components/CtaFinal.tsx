@@ -7,7 +7,7 @@ export default function CtaFinal() {
     <section
       style={{
         background: 'var(--vr-orange)',
-        padding: 'clamp(60px, 7vw, 96px) 32px',
+        padding: 'clamp(100px, 12vw, 160px) 32px',
         textAlign: 'center',
         position: 'relative',
         overflow: 'hidden',

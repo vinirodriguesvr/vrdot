@@ -18,7 +18,7 @@ export default function Footer() {
       style={{
         background: 'var(--vr-black)',
         borderTop: '1px solid var(--vr-gray)',
-        padding: '48px 32px 32px',
+        padding: '80px 32px 48px',
         position: 'relative',
         overflow: 'hidden',
       }}
@@ -47,26 +47,11 @@ export default function Footer() {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          gap: '24px',
+          gap: '40px',
           position: 'relative',
           zIndex: 1,
         }}
       >
-        <motion.span
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="font-display"
-          style={{
-            fontSize: 'clamp(20px, 3vw, 28px)',
-            letterSpacing: '0.1em',
-            color: 'var(--vr-white)',
-          }}
-        >
-          VR.DOT
-        </motion.span>
-
         <nav style={{ display: 'flex', flexWrap: 'wrap', gap: '8px 36px', justifyContent: 'center' }}>
           {links.map((link, i) => (
             <motion.div
