@@ -18,7 +18,7 @@ export default function Footer() {
       style={{
         background: 'var(--vr-black)',
         borderTop: '1px solid var(--vr-gray)',
-        padding: '80px 32px 48px',
+        padding: '48px 32px 32px',
         position: 'relative',
         overflow: 'hidden',
       }}
@@ -47,7 +47,7 @@ export default function Footer() {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          gap: '40px',
+          gap: '24px',
           position: 'relative',
           zIndex: 1,
         }}
@@ -59,7 +59,7 @@ export default function Footer() {
           transition={{ duration: 0.5 }}
           className="font-display"
           style={{
-            fontSize: 'clamp(32px, 5vw, 48px)',
+            fontSize: 'clamp(20px, 3vw, 28px)',
             letterSpacing: '0.1em',
             color: 'var(--vr-white)',
           }}
