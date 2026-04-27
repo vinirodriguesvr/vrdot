@@ -185,8 +185,8 @@ export default function Differentials() {
               lineHeight: 0.95,
             }}
           >
-            Por que a{' '}
-            <span style={{ color: 'var(--vr-orange)' }}>VR.DOT</span>
+            Por que o videomaker{' '}
+            <span style={{ color: 'var(--vr-orange)' }}>Vinícius Rodrigues</span>
           </h2>
         </motion.div>
       </div>
