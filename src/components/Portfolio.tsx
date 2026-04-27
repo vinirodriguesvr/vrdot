@@ -18,7 +18,7 @@ interface PortfolioItem {
 const items: PortfolioItem[] = [
   {
     category: 'Eventos',
-    title: 'Hype',
+    title: 'Hype Boutique',
     type: 'video',
     src: '/hype.mp4',
   },
@@ -30,14 +30,14 @@ const items: PortfolioItem[] = [
   },
   {
     category: 'Imobiliário',
-    title: 'BP Corretora',
+    title: 'Imobiliária Destak',
     type: 'video',
     src: '/bp_corretora.mp4',
     instagramUrl: 'https://www.instagram.com/reel/DXhE9xgjb2h/',
   },
   {
     category: 'Imobiliário',
-    title: 'Luiza P. Motta',
+    title: 'Imobiliária Destak',
     type: 'video',
     src: '/luiza_imovel.mp4',
     instagramUrl: 'https://www.instagram.com/reels/DXhE9xgjb2h/',
@@ -65,7 +65,7 @@ const items: PortfolioItem[] = [
   },
   {
     category: 'Casamentos',
-    title: 'Ander',
+    title: 'Ander e Camila',
     type: 'video',
     src: '/ander_casamento.mp4',
     instagramUrl: 'https://www.instagram.com/reels/DWOcXGujsZa/',
@@ -79,7 +79,7 @@ const items: PortfolioItem[] = [
   },
   {
     category: 'Carros',
-    title: 'ISM Motors',
+    title: 'Sportage',
     type: 'video',
     src: '/ism_motors.mp4',
     instagramUrl: 'https://www.instagram.com/reel/DWHV9r1kc3T/',
