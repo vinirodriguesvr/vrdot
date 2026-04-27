@@ -10,8 +10,6 @@ const filters = ['Todos', 'Eventos', 'Imobiliário', 'Carros', 'Casamentos', 'Ch
 interface PortfolioItem {
   category: string
   title: string
-  type: 'video'
-  src: string
   instagramUrl?: string
 }
 
@@ -19,76 +17,54 @@ const items: PortfolioItem[] = [
   {
     category: 'Eventos',
     title: 'Hype Boutique',
-    type: 'video',
-    src: '/hype.mp4',
   },
   {
     category: 'Eventos',
     title: 'Selezione',
-    type: 'video',
-    src: '/selezione.mp4',
   },
   {
     category: 'Imobiliário',
     title: 'Imobiliária Destak',
-    type: 'video',
-    src: '/bp_corretora.mp4',
     instagramUrl: 'https://www.instagram.com/reel/DXhE9xgjb2h/',
   },
   {
     category: 'Imobiliário',
     title: 'Imobiliária Destak',
-    type: 'video',
-    src: '/luiza_imovel.mp4',
     instagramUrl: 'https://www.instagram.com/reels/DXhE9xgjb2h/',
   },
   {
     category: 'Chá Revelação',
     title: 'Bem-vinda, Sofia',
-    type: 'video',
-    src: '/sofia_cha.mp4',
     instagramUrl: 'https://www.instagram.com/reels/DXAdv_1juLs/',
   },
   {
     category: 'Futevôlei',
     title: 'Bayer Pietro',
-    type: 'video',
-    src: '/bayer_futevolei.mp4',
     instagramUrl: 'https://www.instagram.com/reel/DUgf3SBE62b/',
   },
   {
     category: 'Futevôlei',
     title: 'Isoton',
-    type: 'video',
-    src: '/isoton.mp4',
     instagramUrl: 'https://www.instagram.com/reels/DU1pw4CD6jL/',
   },
   {
     category: 'Casamentos',
     title: 'Ander e Camila',
-    type: 'video',
-    src: '/ander_casamento.mp4',
     instagramUrl: 'https://www.instagram.com/reels/DWOcXGujsZa/',
   },
   {
     category: 'Carros',
     title: 'Audi',
-    type: 'video',
-    src: '/audi.mp4',
     instagramUrl: 'https://www.instagram.com/reels/DWkXELckZLF/',
   },
   {
     category: 'Carros',
     title: 'Sportage',
-    type: 'video',
-    src: '/ism_motors.mp4',
     instagramUrl: 'https://www.instagram.com/reel/DWHV9r1kc3T/',
   },
   {
     category: 'Carros',
     title: 'Peugeot',
-    type: 'video',
-    src: '/peugeot.mp4',
   },
 ]
 
@@ -195,90 +171,82 @@ export default function Portfolio() {
               overflow: 'hidden',
             }}
           >
-            {filtered.map((item) => (
+            {filtered.map((item, i) => (
               <div
-                key={item.src}
+                key={item.title + i}
                 style={{
                   background: 'var(--vr-dark)',
+                  padding: '28px 24px',
                   display: 'flex',
                   flexDirection: 'column',
+                  gap: '12px',
                 }}
               >
-                <video
-                  src={item.src}
-                  controls
-                  playsInline
-                  style={{
-                    width: '100%',
-                    display: 'block',
-                    aspectRatio: '9/16',
-                    objectFit: 'cover',
-                    background: '#000',
-                  }}
-                />
-                <div style={{
-                  padding: '16px 20px',
-                  borderTop: '1px solid var(--vr-gray)',
+                <span style={{
+                  fontFamily: 'Inter, sans-serif',
+                  fontSize: '10px',
+                  letterSpacing: '0.16em',
+                  textTransform: 'uppercase',
+                  color: 'var(--vr-orange)',
                 }}>
+                  {item.category}
+                </span>
+                <span style={{
+                  fontFamily: 'Inter, sans-serif',
+                  fontSize: '16px',
+                  color: 'var(--vr-white)',
+                  fontWeight: 500,
+                  letterSpacing: '-0.01em',
+                }}>
+                  {item.title}
+                </span>
+                {item.instagramUrl ? (
+                  <a
+                    href={item.instagramUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '6px',
+                      fontFamily: 'Inter, sans-serif',
+                      fontSize: '11px',
+                      letterSpacing: '0.1em',
+                      textTransform: 'uppercase',
+                      color: 'var(--vr-muted)',
+                      textDecoration: 'none',
+                      border: '1px solid var(--vr-gray)',
+                      padding: '6px 14px',
+                      borderRadius: '2px',
+                      alignSelf: 'flex-start',
+                      transition: 'color 0.2s, border-color 0.2s',
+                    }}
+                    onMouseEnter={e => {
+                      e.currentTarget.style.color = 'var(--vr-white)'
+                      e.currentTarget.style.borderColor = 'var(--vr-muted)'
+                    }}
+                    onMouseLeave={e => {
+                      e.currentTarget.style.color = 'var(--vr-muted)'
+                      e.currentTarget.style.borderColor = 'var(--vr-gray)'
+                    }}
+                  >
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                      <circle cx="12" cy="12" r="4"/>
+                      <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+                    </svg>
+                    Ver no Instagram
+                  </a>
+                ) : (
                   <span style={{
                     fontFamily: 'Inter, sans-serif',
-                    fontSize: '10px',
-                    letterSpacing: '0.14em',
-                    textTransform: 'uppercase',
-                    color: 'var(--vr-orange)',
-                    display: 'block',
-                    marginBottom: '4px',
+                    fontSize: '11px',
+                    color: 'rgba(107,107,107,0.4)',
+                    letterSpacing: '0.08em',
                   }}>
-                    {item.category}
+                    Em breve
                   </span>
-                  <span style={{
-                    fontFamily: 'Inter, sans-serif',
-                    fontSize: '14px',
-                    color: 'var(--vr-white)',
-                    fontWeight: 500,
-                    display: 'block',
-                    marginBottom: item.instagramUrl ? '12px' : '0',
-                  }}>
-                    {item.title}
-                  </span>
-                  {item.instagramUrl && (
-                    <a
-                      href={item.instagramUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: '6px',
-                        fontFamily: 'Inter, sans-serif',
-                        fontSize: '11px',
-                        letterSpacing: '0.1em',
-                        textTransform: 'uppercase',
-                        color: 'var(--vr-muted)',
-                        textDecoration: 'none',
-                        border: '1px solid var(--vr-gray)',
-                        padding: '5px 12px',
-                        borderRadius: '2px',
-                        transition: 'color 0.2s, border-color 0.2s',
-                      }}
-                      onMouseEnter={e => {
-                        e.currentTarget.style.color = 'var(--vr-white)'
-                        e.currentTarget.style.borderColor = 'var(--vr-muted)'
-                      }}
-                      onMouseLeave={e => {
-                        e.currentTarget.style.color = 'var(--vr-muted)'
-                        e.currentTarget.style.borderColor = 'var(--vr-gray)'
-                      }}
-                    >
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                        <circle cx="12" cy="12" r="4"/>
-                        <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
-                      </svg>
-                      Ver no Instagram
-                    </a>
-                  )}
-                </div>
+                )}
               </div>
             ))}
           </motion.div>
