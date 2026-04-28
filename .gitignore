@@ -12,14 +12,14 @@ dist
 dist-ssr
 *.local
 
-# Arquivos de mídia e assets soltos
-*.mp4
-*.mov
-*.avi
-*.jpg
-*.jpeg
-*.png
-*.gif
+# Arquivos de mídia e assets soltos (apenas na raiz)
+/*.mp4
+/*.mov
+/*.avi
+/*.jpg
+/*.jpeg
+/*.png
+/*.gif
 "Vídeos clientes/"
 
 # Editor directories and files
